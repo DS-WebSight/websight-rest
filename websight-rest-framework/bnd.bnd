@@ -1,0 +1,3 @@
+Bundle-Name: WebSight Rest Framework
+Bundle-License: GNU AGPLv3
+Export-Package: pl.ds.websight.rest.framework,pl.ds.websight.rest.framework.annotations

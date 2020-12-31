@@ -1,0 +1,3 @@
+Bundle-Name: WebSight Rest Atlaskit Client
+Bundle-License: GNU AGPLv3
+Sling-Bundle-Resources: /apps/websight-rest-atlaskit-client
