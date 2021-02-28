@@ -1,8 +1,10 @@
 import { REQUEST_HEADER_EXTENDERS } from 'websight-rest-esm-client/RestClient';
+import { AUTH_CONTEXT_UPDATED } from 'websight-rest-esm-client/AuthContextProvider';
 
 const HEADER_NAME = 'CSRF-Token';
 const TOKEN_SERVLET = '/libs/granite/csrf/token.json';
 let token;
+let firstAuthContextUpdate = true;
 
 REQUEST_HEADER_EXTENDERS[HEADER_NAME] = {
     methods: ['POST'],
@@ -11,6 +13,15 @@ REQUEST_HEADER_EXTENDERS[HEADER_NAME] = {
         return token || getTokenSync();
     }
 };
+
+// If auth context is updated for the n-th time (where n>1), the token request is explicitly triggered.
+window.addEventListener(AUTH_CONTEXT_UPDATED, () => {
+    if(!firstAuthContextUpdate) {
+        getTokenSync();
+    } else {
+        firstAuthContextUpdate = false;
+    }
+});
 
 function getTokenAsync() {
     const xhr = new XMLHttpRequest();

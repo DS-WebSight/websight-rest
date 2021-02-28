@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>pl.ds.websight</groupId>
   <artifactId>websight-rest-reactor</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1</version>
   <packaging>pom</packaging>
   <name>WebSight Rest Reactor</name>
   <description>The reactor pom to build all WebSight rest modules</description>
@@ -15,7 +15,7 @@
   </modules>
   <scm>
     <developerConnection>scm:git:ssh://git@192.168.1.146:7999/ws/websight-rest.git</developerConnection>
-    <tag>1.0.0</tag>
+    <tag>1.0.1</tag>
   </scm>
   <build>
     <plugins>

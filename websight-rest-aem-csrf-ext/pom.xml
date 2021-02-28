@@ -11,7 +11,7 @@
     </parent>
 
     <artifactId>websight-rest-aem-csrf-ext</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
 
     <build>
         <resources>
@@ -50,9 +50,6 @@
             <plugin>
                 <groupId>biz.aQute.bnd</groupId>
                 <artifactId>bnd-baseline-maven-plugin</artifactId>
-                <configuration>
-                    <skip>true</skip>
-                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
@@ -66,6 +63,7 @@
     </build>
 
   <scm>
-    <tag>1.0.0</tag>
+    <tag>1.0.1</tag>
+    <developerConnection>scm:git:ssh://git@192.168.1.146:7999/ws/websight-rest.git</developerConnection>
   </scm>
 </project>
