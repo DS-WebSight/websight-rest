@@ -1,0 +1,3 @@
+Bundle-Name: WebSight Rest AEM CSRF Ext
+Bundle-License: GNU AGPLv3
+Sling-Bundle-Resources: /apps/websight-rest-aem-csrf-ext

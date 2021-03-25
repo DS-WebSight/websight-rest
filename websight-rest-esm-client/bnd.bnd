@@ -1,0 +1,3 @@
+Bundle-Name: WebSight Rest ESM Client
+Bundle-License: GNU AGPLv3
+Sling-Bundle-Resources: /apps/websight-rest-esm-client

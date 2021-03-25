@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>pl.ds.websight</groupId>
+    <artifactId>websight-frontend-parent</artifactId>
+    <version>2</version>
+    <relativePath></relativePath>
+  </parent>
+  <artifactId>websight-rest-esm-client</artifactId>
+  <version>1.0.2</version>
+  <name>WebSight Rest ESM Client</name>
+  <description>Provides Rest Client that allows consuming Rest actions implemented by backend modules.</description>
+  <url>https://github.com/DS-WebSight/websight-rest</url>
+  <organization>
+    <name>Dynamic Solutions sp. z o.o. sp. k.</name>
+    <url>https://ds.pl</url>
+  </organization>
+  <licenses>
+    <license>
+      <name>GNU Affero General Public License v3.0</name>
+      <url>https://github.com/DS-WebSight/websight-rest/blob/master/LICENSE</url>
+    </license>
+  </licenses>
+  <developers>
+    <developer>
+      <name>Michal Cukierman</name>
+      <email>michal.cukierman@ds.pl</email>
+      <organization>Dynamic Solutions</organization>
+      <organizationUrl>https://www.ds.pl/</organizationUrl>
+    </developer>
+  </developers>
+  <scm>
+    <connection>scm:git:ssh://github.com:DS-WebSight/websight-rest.git</connection>
+    <developerConnection>scm:git:ssh://github.com:DS-WebSight/websight-rest.git</developerConnection>
+    <url>https://github.com/DS-WebSight/websight-rest</url>
+  </scm>
+  <build>
+    <resources>
+      <resource>
+        <directory>target/dist</directory>
+        <excludes>
+          <exclude>/apps/websight-web-modules/**</exclude>
+        </excludes>
+      </resource>
+    </resources>
+    <plugins>
+      <plugin>
+        <groupId>com.github.eirslett</groupId>
+        <artifactId>frontend-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>npm run lint</id>
+            <goals>
+              <goal>npm</goal>
+            </goals>
+            <configuration>
+              <arguments>run lint</arguments>
+            </configuration>
+          </execution>
+          <execution>
+            <id>npm run babel</id>
+            <goals>
+              <goal>npm</goal>
+            </goals>
+            <configuration>
+              <arguments>run babel</arguments>
+            </configuration>
+          </execution>
+          <execution>
+            <id>npm run test</id>
+            <goals>
+              <goal>npm</goal>
+            </goals>
+            <configuration>
+              <arguments>run test</arguments>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>biz.aQute.bnd</groupId>
+        <artifactId>bnd-baseline-maven-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>license-maven-plugin</artifactId>
+        <configuration>
+          <licenseName>agpl_v3</licenseName>
+          <licenseFile>${project.basedir}/LICENSE</licenseFile>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>

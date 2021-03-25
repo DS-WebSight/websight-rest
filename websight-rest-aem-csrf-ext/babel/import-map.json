@@ -1,0 +1,10 @@
+{
+  "rootDir": "/apps/",
+  "aliases": {
+    "websight-rest-esm-client/RestClient": "websight-rest-esm-client/web-resources/RestClient.js",
+    "websight-rest-esm-client/AuthContextProvider": "websight-rest-esm-client/web-resources/AuthContextProvider.js"
+  },
+  "devAliases": {
+    "websight-rest-esm-client": "http://localhost:8080/apps/websight-rest-esm-client"
+  }
+}
